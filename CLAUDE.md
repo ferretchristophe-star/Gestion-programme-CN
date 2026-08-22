@@ -11,6 +11,8 @@
 - Interdiction d'écrire ou générer du code tant que l'autorisation explicite n'a pas été donnée.
 - À chaque étape clé, produire un résumé clair et synthétique de ce qui a été validé.
 - Ne démarrer l'écriture du code qu'après un « Validé » ou accord explicite de l'utilisateur sur le résumé.
+- Langue des échanges (discussions, explications, résumés) : exclusivement en français.
+- Langue du projet (code, documentation technique, commentaires, noms de fichiers/variables) : exclusivement en anglais.
 
 ## Contexte projet
 - Objectif : application de gestion des programmes FAO (Fabrication Assistée par Ordinateur) des machines à commande numérique (CN) d'un atelier d'usinage.
