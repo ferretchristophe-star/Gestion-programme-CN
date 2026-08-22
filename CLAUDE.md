@@ -18,3 +18,12 @@
 - Objectif : application de gestion des programmes FAO (Fabrication Assistée par Ordinateur) des machines à commande numérique (CN) d'un atelier d'usinage.
 - Enjeu principal : traçabilité documentaire conforme ISO 9001 et EN 9100 (aéronautique) — maîtrise des documents et enregistrements, historique des révisions, approbation avant utilisation en production, association programme/pièce/machine/opérateur/OF.
 - Détails à compléter au fur et à mesure des échanges avec l'utilisateur.
+
+### Fonctionnalités clés validées
+1. Archivage des programmes validés : l'application ne stocke que les versions validées des programmes machine.
+2. Gouvernance et indiçage (versioning) :
+   - Incrémentation automatique de l'indice/version à chaque modification enregistrée.
+   - Historique complet des versions conservé pour un même programme.
+3. Gestion multi-machines :
+   - Association de chaque programme et de ses révisions aux machines correspondantes.
+   - Filtrage et recherche par machine et par indice.
