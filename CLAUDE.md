@@ -13,6 +13,7 @@
 - Ne démarrer l'écriture du code qu'après un « Validé » ou accord explicite de l'utilisateur sur le résumé.
 - Langue des échanges (discussions, explications, résumés) : exclusivement en français.
 - Langue du projet (code, documentation technique, commentaires, noms de fichiers/variables) : exclusivement en anglais.
+- L'utilisateur n'est pas développeur : expliquer simplement, sans jargon technique ni détails d'implémentation non demandés. Raisonner en termes métier (atelier, qualité, traçabilité).
 
 ## Contexte projet
 - Objectif : application de gestion des programmes FAO (Fabrication Assistée par Ordinateur) des machines à commande numérique (CN) d'un atelier d'usinage.
@@ -27,3 +28,26 @@
 3. Gestion multi-machines :
    - Association de chaque programme et de ses révisions aux machines correspondantes.
    - Filtrage et recherche par machine et par indice.
+
+### Règles métier strictes validées
+
+#### Workflow de validation hybride (deux canaux d'entrée)
+- Canal FAO / Bureau d'études (différé) : import d'un programme non éprouvé sur machine. Statut initial « En attente de validation ». Inutilisable en série de production avant l'acte de validation.
+- Canal Terrain / Pied de machine (direct) : mise au point ou modification faite sur le directeur de commande. Statut initial « Validé » (archivage immédiat d'une version opérationnelle).
+
+#### Nomenclature des indices
+- Version d'essai / en attente de validation : suffixe `_ZZ` (ex. `PROG_PART123_P10_M1_ZZ`).
+- Version validée (production) : indice numérique incrémental à 2 chiffres `_01`, `_02`, `_03`...
+- Au passage « En attente de validation » vers « Validé », le système convertit automatiquement l'indice `_ZZ` vers l'indice validé suivant (`_01` à la création initiale, `_02` si révision, etc.).
+
+#### Clé unique métier
+- Un programme CN est obligatoirement lié au quadruplet : Référence pièce + Indice de plan + Phase de gamme + Machine spécifique.
+- Règle d'or : 1 programme = 1 machine. Deux machines, même identiques, ne partagent jamais le même enregistrement ni le même fichier. Une adaptation pour une autre machine génère un programme dédié.
+
+#### Stockage physique
+- L'application gère les métadonnées et les accès, elle ne stocke pas les fichiers dans sa base de données.
+- Elle crée et administre automatiquement une arborescence de dossiers standardisée sur un serveur réseau centralisé.
+- L'accès et l'écriture sur l'emplacement réseau racine sont sécurisés (compte de service dédié administré par l'application).
+
+#### Traçabilité
+- Journal d'opérations complet, horodatage, identification de l'utilisateur ayant déposé ou validé le fichier.
