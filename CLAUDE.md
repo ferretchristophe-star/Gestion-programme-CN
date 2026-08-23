@@ -53,6 +53,7 @@
 - Journal d'opérations complet, horodatage, identification de l'utilisateur ayant déposé ou validé le fichier.
 
 #### Identifiant technique unique
-- À l'import d'un programme dans l'application, un identifiant unique (1, 2, 3, 4...) est attribué automatiquement.
+- À chaque dépôt/import d'une version (que ce soit un `_ZZ` ou une version validée directement), l'application attribue un identifiant unique séquentiel (1, 2, 3, 4...), tous programmes et toutes pièces confondus.
 - Cet identifiant est permanent : jamais modifiable, jamais réattribuable, jamais écrasé.
-- Portée exacte (par fiche programme ou par version déposée) à confirmer avec l'utilisateur.
+- Portée : la version déposée, pas la fiche programme. Une même fiche programme accumule donc plusieurs identifiants au fil de ses révisions (ex. n°14, puis n°37, puis n°52), dans l'ordre chronologique réel des dépôts de tout l'atelier.
+- Sert de preuve d'antériorité absolue et incontestable, indépendante de toute codification métier (référence pièce, indice, machine).
