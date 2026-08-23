@@ -51,3 +51,8 @@
 
 #### Traçabilité
 - Journal d'opérations complet, horodatage, identification de l'utilisateur ayant déposé ou validé le fichier.
+
+#### Identifiant technique unique
+- À l'import d'un programme dans l'application, un identifiant unique (1, 2, 3, 4...) est attribué automatiquement.
+- Cet identifiant est permanent : jamais modifiable, jamais réattribuable, jamais écrasé.
+- Portée exacte (par fiche programme ou par version déposée) à confirmer avec l'utilisateur.
